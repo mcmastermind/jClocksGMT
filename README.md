@@ -12,7 +12,7 @@ Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.p
 <br>Website: http://www.mcmastermind.com
  </blockquote>
 <br><br>
-Plugin Website: http://www.github.com/mcmastermind/[PLUGIN LINK]
+Plugin Website: http://www.github.com/mcmastermind/jClocksGMT
 <br><br>
 </blockquote>
 Description:<br>
