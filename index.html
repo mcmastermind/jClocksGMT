@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+        <title>jClocksGMT</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="js/jClocksGMT.js"></script>
+        <script src="js/jquery.rotate.js"></script>
+        <link rel="stylesheet" href="css/jClocksGMT.css">
+        <style>
+            body { font-family: Arial, sans-serif; }
+        </style>
+        <script>
+            $(document).ready(function(){
+                $('#office_hou').officeClock({offset: '-5', hour24: true});
+                $('#office_dc').officeClock({offset: '-4', digital: false});
+                $('#office_india').officeClock({offset: '+5.5'});
+            });
+        </script>
+    </head>
+    <body>
+        <div id="office_hou" class="clock_container">
+            <div class="lbl">Houston, TX, USA</div>
+            <div class="clockHolder">
+                <div class="rotatingWrapper"><img class="hour" src="images/clock_hour.png" /></div>
+                <div class="rotatingWrapper"><img class="min" src="images/clock_min.png" /></div>
+                <div class="rotatingWrapper"><img class="sec" src="images/clock_sec.png" /></div>
+                <img class="clock" src="images/clock_face.png" />
+            </div>
+            <div class="digital">
+                <span class="hr"></span><span class="minute"></span> <span class="period"></span>
+            </div>
+        </div>
+        
+        <div id="office_dc" class="clock_container">
+            <div class="lbl">Washington, DC, USA</div>
+            <div class="clockHolder">
+                <div class="rotatingWrapper"><img class="hour" src="images/clock_hour.png" /></div>
+                <div class="rotatingWrapper"><img class="min" src="images/clock_min.png" /></div>
+                <div class="rotatingWrapper"><img class="sec" src="images/clock_sec.png" /></div>
+                <img class="clock" src="images/clock_face.png" />
+            </div> 
+            <div class="digital">
+                <span class="hr"></span><span class="minute"></span> <span class="period"></span>
+            </div>
+        </div>
+        
+        <div id="office_india" class="clock_container">
+            <div class="lbl">New Delhi, India</div>
+            <div class="clockHolder">
+                <div class="rotatingWrapper"><img class="hour" src="images/clock_hour.png" /></div>
+                <div class="rotatingWrapper"><img class="min" src="images/clock_min.png" /></div>
+                <div class="rotatingWrapper"><img class="sec" src="images/clock_sec.png" /></div>
+                <img class="clock" src="images/clock_face.png" />
+            </div> 
+            <div class="digital">
+                <span class="hr"></span><span class="minute"></span> <span class="period"></span>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,3 +1,19 @@
+.clock_container {
+    float:left;
+    margin-right:2px;
+    width:110px;
+    position: relative;
+}
+.clock_container .lbl {
+    font-size:10px;
+    color: #333333;
+    line-height: 22px;
+    background: url(../images/office_label.png);
+    text-align: center;
+    height: 27px;
+    width: 108px;
+    margin: 0 auto;
+}
 .clockHolder {
     width:100px; 
     margin:0 auto;
@@ -26,23 +42,6 @@
     height:100px;
     left: 5px;
 
-}
-.office_clock {
-    float:left;
-    margin-right:2px;
-    width:105px;
-    position: relative;
-    overflow:hidden;
-}
-.office_clock .lbl {
-    font-size:10px;
-    color: #333333;
-    line-height: 22px;
-    background: url(../images/office_label.png);
-    text-align: center;
-    height: 27px;
-    width: 108px;
-    margin: 0 auto;
 }
 .digital {
     font-weight:bold;
