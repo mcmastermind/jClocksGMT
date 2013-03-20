@@ -6,33 +6,33 @@ LAST UPDATE: 2013.20.03
 Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
 <br><br>
 <blockquote> Author Information:
-Name: Richard McMaster
-Email: richard.mcmaster@live.com
-Location: Houston, Texas, United States
-Website: http://www.mcmastermind.com
+<br>Name: Richard McMaster
+<br>Email: richard.mcmaster@live.com
+<br>Location: Houston, Texas, United States
+<br>Website: http://www.mcmastermind.com
  </blockquote>
 <br><br>
 Plugin Website: http://www.github.com/mcmastermind/[PLUGIN LINK]
 <br><br>
 </blockquote>
-Description:
+Description:<br>
 jQuery based analog and digital clock(s) based on GMT offsets. Requires jQuery Rotate plugin.
  </blockquote>
 <br><br>
 <b>Credit Resources: </b>
 <blockquote>Article: "Convert the local time to another time zone with this JavaScript"
-URL: http://www.techrepublic.com/article/convert-the-local-time-to-another-time-zone-with-this-javascript/6016329
-Author: Melonfire
-Date: 2006.03.01
+<br>URL: http://www.techrepublic.com/article/convert-the-local-time-to-another-time-zone-with-this-javascript/6016329
+<br>Author: Melonfire
+<br>Date: 2006.03.01
 </blockquote>
 <blockquote>
 Article: "Analog JQuery clock"
-URL: http://d-zig.com/Desc.aspx?item=74
-Author: Jim Rasmussen
-Date: circa 2011
+<br>URL: http://d-zig.com/Desc.aspx?item=74
+<br>Author: Jim Rasmussen
+<br>Date: circa 2011
 </blockquote>
 <br><br>
-<b>Documentation:</b>
+<b>Documentation:</b><br>
 Default options:
 <ul>
 <li>offset: '0',    // String: Set GMT offset (+5.5, -4, 0, etc)</li>
