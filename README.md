@@ -38,7 +38,7 @@ Include jquery and the jClocksGMT script in your head tags or right before your 
 
 Include the jClocksGMT CSS style in your head tags.
 
-`''html 
+```html 
 <link rel="stylesheet" href="css/jClocksGMT.css">
 ```
 
