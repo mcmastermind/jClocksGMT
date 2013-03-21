@@ -12,7 +12,7 @@
  *      Location: Houston, Texas, United States
  *      Website: http://www.mcmastermind.com
  *
- * Website: http://www.github.com/mcmastermind/[PLUGIN LINK]
+ * Plugin Website: http://www.github.com/mcmastermind/jClocksGMT
  *
  * Description:
  *      jQuery based analog and digital clock(s) based on GMT offsets. Requires jQuery Rotate plugin.
@@ -83,7 +83,7 @@
 
     $.fn.extend({
         
-        officeClock: function(options) {
+        jClocksGMT: function(options) {
             
             var defaults = {
                 offset: '0',
