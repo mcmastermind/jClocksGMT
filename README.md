@@ -32,7 +32,7 @@ Include jquery and the jClocksGMT script in your head tags or right before your 
 
 ###CSS
 
-Include the swipebox CSS style in your head tags.
+Include the jClocksGMT CSS style in your head tags.
 
 `<link rel="stylesheet" href="css/jClocksGMT.css">`
 
