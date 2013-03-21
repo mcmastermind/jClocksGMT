@@ -26,15 +26,21 @@ Chrome, Safari, Firefox, Opera, IE7+, IOS4+, Android, windows phone.
 
 Include jquery and the jClocksGMT script in your head tags or right before your body closing tag.
 
-`<script src="js/jquery-1.9.0.js"></script>`
+```html
+<script src="js/jquery-1.9.0.js"></script>
+```
 
-`<script src="js/jClocksGMT.js"></script>`
+```html
+<script src="js/jClocksGMT.js"></script>
+```
 
 ###CSS
 
 Include the jClocksGMT CSS style in your head tags.
 
-`<link rel="stylesheet" href="css/jClocksGMT.css">`
+`''html 
+<link rel="stylesheet" href="css/jClocksGMT.css">
+```
 
 ###HTML
 
@@ -59,7 +65,9 @@ Use the following markup for your clock.
 
 Bind the jClocksGMT behaviour on every link with any id or class.
 
-`$("#clock_dc").jClocksGMT({offset: '+5.5'});`
+```js
+$("#clock_dc").jClocksGMT({offset: '+5.5'});
+```
 
 ## Creator
 
