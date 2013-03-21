@@ -107,6 +107,7 @@
                 $('#' + id + ' .hour').rotate(options.angleHour);
 
                 setInterval(function () {
+                
                     // create new date object
                     var d = new Date;
                     // convert to msec
