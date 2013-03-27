@@ -152,7 +152,7 @@
                     // display digital clock if enabled
                     if(options.digital) {
                         $('#' + id + ' .digital .hr').html(h + ':');
-                        $('#' + id + ' .digital .minute').html(m < 12 ? "0" + m : m);
+                        $('#' + id + ' .digital .minute').html(m < 10 ? "0" + m : m);
                         if(!options.hour24) {
                             $('#' + id + ' .digital .period').html(dd);
                         }
