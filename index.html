@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>jClocksGMT by mcmastermind</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/mcmastermind/jClocksGMT">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/mcmastermind/jClocksGMT/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/mcmastermind/jClocksGMT/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>jClocksGMT</h1>
+          <p>jQuery based analog and digital clock(s) based on GMT offsets. Requires jQuery Rotate plugin.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/mcmastermind">mcmastermind</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>jClocksGMT</h1>
+
+<p>jQuery based analog and digital clock(s).</p>
+
+<h2>What is jClocksGMT?</h2>
+
+<p>jClocksGMT is a jQuery analog and digital clock(s) plugin based on GMT offsets. Requires jQuery Rotate plugin.</p>
+
+<h2>Features</h2>
+
+<ul>
+<li>Analog Clock</li>
+<li>Digital Clock</li>
+<li>jQuery Rotate</li>
+<li>GMT Timezone Offsets</li>
+<li>Easy CSS customization</li>
+<li>Easy image customization</li>
+</ul><h3>Compatibility</h3>
+
+<p>Chrome, Safari, Firefox, Opera, IE7+, IOS4+, Android, windows phone.</p>
+
+<h2>Usage</h2>
+
+<h3>Javascript</h3>
+
+<p>Include jquery and the jClocksGMT script in your head tags or right before your body closing tag.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/jquery-1.9.0.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/jClocksGMT.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<h3>CSS</h3>
+
+<p>Include the jClocksGMT CSS style in your head tags.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"css/jClocksGMT.css"</span><span class="nt">&gt;</span>
+</pre></div>
+
+<h3>HTML</h3>
+
+<p>Use the following markup for your clock.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"clock_dc"</span> <span class="na">class=</span><span class="s">"clock_container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"lbl"</span><span class="nt">&gt;</span>Washington, DC<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"clockHolder"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"rotatingWrapper"</span><span class="nt">&gt;&lt;img</span> <span class="na">class=</span><span class="s">"hour"</span> <span class="na">src=</span><span class="s">"images/clock_hour.png"</span> <span class="nt">/&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"rotatingWrapper"</span><span class="nt">&gt;&lt;img</span> <span class="na">class=</span><span class="s">"min"</span> <span class="na">src=</span><span class="s">"images/clock_min.png"</span> <span class="nt">/&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"rotatingWrapper"</span><span class="nt">&gt;&lt;img</span> <span class="na">class=</span><span class="s">"sec"</span> <span class="na">src=</span><span class="s">"images/clock_sec.png"</span> <span class="nt">/&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"clock"</span> <span class="na">src=</span><span class="s">"images/clock_face.png"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span> 
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"digital"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"hr"</span><span class="nt">&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"minute"</span><span class="nt">&gt;&lt;/span&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"period"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<h3>Fire the plugin</h3>
+
+<p>Bind the jClocksGMT behaviour on every link with any id or class.</p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">"#clock_dc"</span><span class="p">).</span><span class="nx">jClocksGMT</span><span class="p">({</span><span class="nx">offset</span><span class="o">:</span> <span class="s1">'+5.5'</span><span class="p">});</span>
+</pre></div>
+
+<h2>Creator</h2>
+
+<p><strong>Richard McMaster</strong></p>
+
+<ul>
+<li><a href="http://mcmastermind.com">http://mcmastermind.com</a></li>
+<li><a href="http://twitter.com/richardmcmaster">http://twitter.com/richardmcmaster</a></li>
+</ul><h2>License</h2>
+
+<p>jClocksGMT is available under the MIT license.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker(" UA-18914527-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
