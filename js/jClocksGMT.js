@@ -31,6 +31,11 @@
  *      Author: Jim Rasmussen
  *      Date: circa 2011
  *
+ *      Article: "Daylight Saving Time - Adding Methods to the Date Object"
+ *      URL: http://javascript.about.com/library/bldst.htm
+ *      Author: N/A
+ *      Date: N/A
+ *
  * Documentation:
  *      Default options:
  *          offset: '0',    // String: Set GMT offset (+5.5, -4, 0, etc)
