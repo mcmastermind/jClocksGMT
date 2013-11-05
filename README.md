@@ -1,11 +1,11 @@
-jClocksGMT
+jClocksGMT 1.1
 ================================
 
 jQuery based analog and digital clock(s).
 
 ##What is jClocksGMT?
 
-jClocksGMT is a jQuery analog and digital clock(s) plugin based on GMT offsets. Requires jQuery Rotate plugin.
+jClocksGMT is a jQuery analog and digital clock(s) plugin based on GMT offsets. Now supporting automatic daylight saving time conversions for affected timezones. Requires jQuery Rotate plugin.
 
 ##Features
 
@@ -13,6 +13,7 @@ jClocksGMT is a jQuery analog and digital clock(s) plugin based on GMT offsets. 
 - Digital Clock
 - jQuery Rotate
 - GMT Timezone Offsets
+- Automatic Daylight Saving Time conversion on affected timezones.
 - Easy CSS customization
 - Easy image customization
 
@@ -66,7 +67,7 @@ Use the following markup for your clock.
 Bind the jClocksGMT behaviour on every link with any id or class.
 
 ```js
-$("#clock_dc").jClocksGMT({offset: '+5.5'});
+$("#clock_dc").jClocksGMT({offset: '-6', analog: true, digital: true, hour24: false});
 ```
 
 ## Creator

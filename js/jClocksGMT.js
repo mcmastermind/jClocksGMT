@@ -1,8 +1,11 @@
 /********************************************************************************************************
  *
  * NAME: jClocksGMT
- * VERSION: 1.0 
- * LAST UPDATE: 2013.20.03
+ * VERSION: 1.1 
+ * LAST UPDATE: 2013.05.11
+ *
+ * Change Log:
+ *      1.1: Added automatic Daylight Saving Time calculation
  *
  * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
  * 
@@ -15,7 +18,7 @@
  * Plugin Website: http://www.github.com/mcmastermind/jClocksGMT
  *
  * Description:
- *      jQuery based analog and digital clock(s) based on GMT offsets. Requires jQuery Rotate plugin.
+ *      jQuery based analog and digital clock(s) using GMT offsets. Requires jQuery Rotate plugin.
  *
  * Credit Resources: 
  *      Article: "Convert the local time to another time zone with this JavaScript"
@@ -38,7 +41,8 @@
  *          digital: true,  // Boolean: Display digital clock
  *          analog: true    // Boolean: Display analog clock
  *
- *      Common offsets by time zone: (only use the number after GMT: GMT-2 = offset: '-2')
+ *      Common offsets by time zone: (only use the number after GMT: GMT-2 = offset: '-2'
+ *                                    Daylight Saving Time converted automatically)
  *          GMT-12	 Eniwetok
  *          GMT-11	 Samoa
  *          GMT-10	 Hawaii
@@ -64,18 +68,6 @@
  *          GMT+10	 Sydney, Melbourne, Guam
  *          GMT+11	 Magadan, Soloman Is.
  *          GMT+12	 Fiji, Wellington, Auckland
- *
- *      United States offsets by time zone: (only use the number after UTC: UTC-2 = offset: '-2')
- *       (Standard Time)
- *          UTC-5	 EST (Eastern Standard Time)
- *          UTC-6	 CST (Central Standard Time)
- *          UTC-7	 MST (Mountain Standard Time)
- *          UTC-8	 PST (Pacific Standard Time)
- *       (Daylight Time: used when "Daylight Savings Time" is in affect)
- *          UTC-4	 EDT (Eastern Daylight Time)
- *          UTC-5	 CDT (Central Daylight Time)
- *          UTC-6	 MDT (Mountain Daylight Time)
- *          UTC-7	 PDT (Pacific Daylight Time)
  *
  ********************************************************************************************************/
 
@@ -106,6 +98,17 @@
                 $('#' + id + ' .min').rotate(options.angleMin);
                 $('#' + id + ' .hour').rotate(options.angleHour);
 
+                // check if daylight saving time is in effect
+                Date.prototype.stdTimezoneOffset = function() {
+                    var jan = new Date(this.getFullYear(), 0, 1);
+                    var jul = new Date(this.getFullYear(), 6, 1);
+                    return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+                }
+                
+                Date.prototype.dst = function() {
+                    return this.getTimezoneOffset() < this.stdTimezoneOffset();
+                }
+                
                 setInterval(function () {
                 
                     // create new date object
@@ -114,6 +117,10 @@
                     // add local time offset
                     // get UTC time in msec
                     var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+                    
+                    if( d.dst() ) {
+                        offset = offset - 1;
+                    };
                     
                     // create new Date object for different city
                     // using supplied offset
