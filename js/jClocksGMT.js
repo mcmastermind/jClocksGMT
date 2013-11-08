@@ -95,7 +95,7 @@
             var options = $.extend(defaults, options);
             
             return this.each(function(){
-                var offset = options.offset;
+            
                 var id = $(this).attr('id');
                 
                 // initial hand rotation
@@ -115,7 +115,8 @@
                 }
                 
                 setInterval(function () {
-                
+                    // get / reset offset (due to dst offset change. else hours cound backwards)
+                    var offset = options.offset;
                     // create new date object
                     var d = new Date;
                     // convert to msec
