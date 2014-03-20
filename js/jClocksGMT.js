@@ -1,10 +1,11 @@
 /********************************************************************************************************
  *
  * NAME: jClocksGMT
- * VERSION: 1.1 
- * LAST UPDATE: 2013.05.11
+ * VERSION: 1.2
+ * LAST UPDATE: 2014.03.12
  *
  * Change Log:
+ *      1.2: Fixed severely flawed Daylight Saving Time calculation
  *      1.1: Added automatic Daylight Saving Time calculation
  *
  * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
@@ -76,14 +77,14 @@
  *
  ********************************************************************************************************/
 
-(function($) {
+ (function($) {
 
     $.fn.extend({
         
         jClocksGMT: function(options) {
             
             var defaults = {
-                offset: '0',
+                offset: '0', // default gmt offset
                 angleSec: 0,
                 angleMin: 0,
                 angleHour: 0,
@@ -95,7 +96,7 @@
             var options = $.extend(defaults, options);
             
             return this.each(function(){
-            
+                var offset = options.offset;
                 var id = $(this).attr('id');
                 
                 // initial hand rotation
@@ -106,17 +107,31 @@
                 // check if daylight saving time is in effect
                 Date.prototype.stdTimezoneOffset = function() {
                     var jan = new Date(this.getFullYear(), 0, 1);
+                    var janUTC = jan.getTime() + (jan.getTimezoneOffset() * 60000);
+                    var janOffset = new Date(janUTC + (3600000 * options.offset));
                     var jul = new Date(this.getFullYear(), 6, 1);
+                    var julUTC = jul.getTime() + (jul.getTimezoneOffset() * 60000);
+                    var julOffset = new Date(julUTC + (3600000 * options.offset));
                     return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+                    //return Math.max(janOffset, julOffset);
                 }
-                
                 Date.prototype.dst = function() {
-                    return this.getTimezoneOffset() < this.stdTimezoneOffset();
+                    if( parseFloat(options.offset) <= -4 && parseFloat(options.offset) >= -10 ) {
+                        var dCheck = new Date;
+                        var utcCheck = dCheck.getTime() + (dCheck.getTimezoneOffset() * 60000);
+                        var newCheck = new Date(utcCheck + (3600000 * options.offset));
+                        return this.getTimezoneOffset() < this.stdTimezoneOffset();
+                        //return newCheck.getTimezoneOffset() < this.stdTimezoneOffset();
+                    }
                 }
+                // create new date object
+                var dateCheck = new Date;
+
+                if( dateCheck.dst() ) {
+                   offset = parseFloat(offset) + 1;
+                };
                 
                 setInterval(function () {
-                    // get / reset offset (due to dst offset change. else hours cound backwards)
-                    var offset = options.offset;
                     // create new date object
                     var d = new Date;
                     // convert to msec
@@ -124,9 +139,9 @@
                     // get UTC time in msec
                     var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
                     
-                    if( d.dst() ) {
-                        offset = offset - 1;
-                    };
+                    /*if( d.dst() ) {
+                        offset = offset + 1;
+                    };*/
                     
                     // create new Date object for different city
                     // using supplied offset

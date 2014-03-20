@@ -1,4 +1,4 @@
-jClocksGMT 1.1
+jClocksGMT 1.2
 ================================
 
 jQuery based analog and digital clock(s).
