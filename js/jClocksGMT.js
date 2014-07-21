@@ -46,6 +46,7 @@
  *          hour24: false,  // Boolean: 24 hour clock or 12 hour clock
  *          digital: true,  // Boolean: Display digital clock
  *          analog: true    // Boolean: Display analog clock
+            myTime: undefined // String: Set your time value here to show a static clock. E.g. "December 17, 1995 03:24:00" (within double quotes)
  *
  *      Common offsets by time zone: (only use the number after GMT: GMT-2 = offset: '-2'
  *                                    Daylight Saving Time converted automatically)
@@ -90,7 +91,8 @@
                 angleHour: 0,
                 hour24: false,
                 digital: true,
-                analog: true
+                analog: true,
+                myTime: undefined
             }
             
             var options = $.extend(defaults, options);
@@ -124,8 +126,18 @@
                         //return newCheck.getTimezoneOffset() < this.stdTimezoneOffset();
                     }
                 }
+                // check if user entered myTime option or is default
+                function check_myTime(userTime){
+                    if (typeof userTime != "undefined"){
+                        var newDate = new Date(userTime);
+                    }else{
+                        var newDate = new Date();
+                    }
+                    return newDate;
+                }
+                var newTime = options.myTime;
                 // create new date object
-                var dateCheck = new Date;
+                var dateCheck = check_myTime(newTime);
 
                 if( dateCheck.dst() ) {
                    offset = parseFloat(offset) + 1;
@@ -133,7 +145,7 @@
                 
                 setInterval(function () {
                     // create new date object
-                    var d = new Date;
+                    var d = new check_myTime(newTime);
                     // convert to msec
                     // add local time offset
                     // get UTC time in msec
