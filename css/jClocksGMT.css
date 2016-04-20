@@ -1,51 +1,40 @@
-.clock_container {
+.jcgmt-container {
     float:left;
-    margin-right:2px;
-    width:110px;
-    position: relative;
+    padding: 3px;
 }
-.clock_container .lbl {
+.jcgmt-container .jcgmt-lbl {
     font-size:10px;
     color: #333333;
     line-height: 22px;
-    background: url(../images/clock_label.png);
+    background: url(../images/jcgmt-clock_label.png) no-repeat;
     text-align: center;
-    height: 27px;
+    padding-bottom: 5px;
     width: 108px;
     margin: 0 auto;
 }
-.clockHolder {
+.jcgmt-clockHolder {
     width:100px; 
     margin:0 auto;
     position:relative;
+    overflow: hidden;
 }
-.clock {
-    margin-left:5px;
-}
-
-.sec {
-    display:block;
-    position:absolute;
-}
-.min {
-    display:block;
-    position:absolute;
-}
-.hour {
+.jcgmt-sec,
+.jcgmt-min,
+.jcgmt-hour {
     display:block;
     position:absolute;
 }
 
-.rotatingWrapper {
+.jcgmt-rotatingWrapper {
     position:absolute;
     width:100px;
     height:100px;
-    left: 5px;
-
 }
-.digital {
+.jcgmt-digital,
+.jcgmt-date {
     font-weight:bold;
-    font-size: 14px;
+    font-size: 12px;
     color: #444444;
     text-align:center;
+    margin-left:8px;
 }
