@@ -1,62 +1,73 @@
 <!doctype html>
 <html>
     <head>
-        <title>jClocksGMT v. 1.0</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script src="js/jClocksGMT.js"></script>
-        <script src="js/jquery.rotate.js"></script>
+
+        <title>jClocksGMT v. 2.0</title>
+
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+        
         <link rel="stylesheet" href="css/jClocksGMT.css">
+        
         <style>
             body { font-family: Arial, sans-serif; }
         </style>
-        <script>
-            $(document).ready(function(){
-                $('#clock_hou').jClocksGMT({offset: '-5', hour24: true});
-                $('#clock_dc').jClocksGMT({offset: '-4', digital: false});
-                $('#clock_india').jClocksGMT({offset: '+5.5'});
-            });
-        </script>
+
     </head>
     <body>
-    
-        <div id="clock_hou" class="clock_container">
-            <div class="lbl">Houston, TX, USA</div>
-            <div class="clockHolder">
-                <div class="rotatingWrapper"><img class="hour" src="images/clock_hour.png" /></div>
-                <div class="rotatingWrapper"><img class="min" src="images/clock_min.png" /></div>
-                <div class="rotatingWrapper"><img class="sec" src="images/clock_sec.png" /></div>
-                <img class="clock" src="images/clock_face.png" />
-            </div>
-            <div class="digital">
-                <span class="hr"></span><span class="minute"></span> <span class="period"></span>
-            </div>
-        </div>
-        
-        <div id="clock_dc" class="clock_container">
-            <div class="lbl">Washington, DC, USA</div>
-            <div class="clockHolder">
-                <div class="rotatingWrapper"><img class="hour" src="images/clock_hour.png" /></div>
-                <div class="rotatingWrapper"><img class="min" src="images/clock_min.png" /></div>
-                <div class="rotatingWrapper"><img class="sec" src="images/clock_sec.png" /></div>
-                <img class="clock" src="images/clock_face.png" />
-            </div> 
-            <div class="digital">
-                <span class="hr"></span><span class="minute"></span> <span class="period"></span>
-            </div>
-        </div>
-        
-        <div id="clock_india" class="clock_container">
-            <div class="lbl">New Delhi, India</div>
-            <div class="clockHolder">
-                <div class="rotatingWrapper"><img class="hour" src="images/clock_hour.png" /></div>
-                <div class="rotatingWrapper"><img class="min" src="images/clock_min.png" /></div>
-                <div class="rotatingWrapper"><img class="sec" src="images/clock_sec.png" /></div>
-                <img class="clock" src="images/clock_face.png" />
-            </div> 
-            <div class="digital">
-                <span class="hr"></span><span class="minute"></span> <span class="period"></span>
-            </div>
-        </div>
-        
+
+        <div id="clock_hou"></div>
+        <div id="clock_india"></div>
+        <div id="clock_korea"></div>
+        <div id="clock_uk"></div>
+        <div id="clock_tokyo"></div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+        <script src="js/jClocksGMT.js"></script>
+        <script src="js/jquery.rotate.js"></script>
+
+        <script>
+            $(document).ready(function(){
+
+                $('#clock_hou').jClocksGMT(
+                {
+                    title: 'Houston, TX, USA', 
+                    offset: '-6'
+                });
+
+                $('#clock_india').jClocksGMT(
+                {
+                    title: 'New Delhi, India', 
+                    offset: '+5.5', 
+                    dst: false, 
+                    skin: 2, 
+                    timeformat: 'HH:mm'
+                });
+
+                $('#clock_korea').jClocksGMT(
+                {
+                    title: 'Seoul, S. Korea', 
+                    offset: '+8', 
+                    skin: 3, 
+                    date: true
+                });
+
+                $('#clock_uk').jClocksGMT(
+                {   
+                    date: true, 
+                    dateformat: 'YYYY/MM/DD', 
+                    skin: 4
+                });
+
+                $('#clock_tokyo').jClocksGMT(
+                {
+                    title: 'Tokyo, Japan',
+                    offset: '+9',
+                    skin: 5
+                });
+
+            });
+        </script>
+
     </body>
 </html>
