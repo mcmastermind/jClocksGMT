@@ -33,6 +33,9 @@ Include jquery and the jClocksGMT script in your head tags or right before your 
 
 ```html
 <script src="js/jquery.js"></script>
+<<<<<<< HEAD
+<script src="js/jquery.rotate.js"></script>
+=======
 ```
 
 ```html
@@ -40,6 +43,7 @@ Include jquery and the jClocksGMT script in your head tags or right before your 
 ```
 
 ```html
+>>>>>>> origin/master
 <script src="js/jClocksGMT.js"></script>
 ```
 
@@ -87,6 +91,10 @@ skin: 1                      // Integer: Set 1 of 5 included skins for the analo
 
 ####Common offsets by time zone: 
 (only use the number after GMT: GMT-2 = offset: '-2' Daylight Saving Time converted automatically)
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master
 | OFFEST   |   LOCATION |
 |:---------|:------------|
 | `GMT-12` |  Eniwetok |
