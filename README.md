@@ -112,9 +112,13 @@ skin: 1                      // Integer: Set 1 of 5 included skins for the analo
 | `GMT+12` |  Fiji, Wellington, Auckland|
 
 To find specific GMT offsets, 
+
 goto: http://www.timeanddate.com/time/zone/
+
 search: location
+
 use: Current Offset
+
 if location is currently observing DST, add 1 to offset
 
 ####Time Formatting:
