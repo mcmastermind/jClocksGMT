@@ -7,8 +7,8 @@
  * /___/                                                        
  * 
  * NAME: jClocksGMT.js
- * VERSION: 2.0
- * LAST UPDATE: 2016.04.20
+ * VERSION: 2.0.1
+ * LAST UPDATE: 2016.04.24
  *
  * Author Information:
  *      Name: Richard McMaster
@@ -25,6 +25,7 @@
  * Plugin Website: http://www.github.com/mcmastermind/jClocksGMT
  *
  * Change Log:
+ *      2.0.1: Added image path parameter for images not in plugin directory
  *      2.0: Complete overhaul of code for increased accuracy and stability
  *              - NEW! 5 clock skins to choose from
  *              - NEW! Timestamp formatting options
@@ -54,7 +55,8 @@
  *          angleSec: 0,                 Integer: Starting angle of second hand
  *          angleMin: 0,                 Integer: Starting angle of minute hand
  *          angleHour: 0,                Integer: Starting angle of hour hand
- *          skin: 1                      Integer: Set 1 of 5 included skins for the analog clock 
+ *          skin: 1,                     Integer: Set 1 of 5 included skins for the analog clock 
+ *          imgpath: ''                  String:  Set path of images
  *
  *      Common offsets by time zone: (only use the number after GMT: GMT-2 = offset: '-2'
  *                                    Daylight Saving Time converted automatically)
@@ -144,7 +146,8 @@
                 angleSec: 0,
                 angleMin: 0,
                 angleHour: 0,
-                skin: 1
+                skin: 1,
+                imgpath: ''
             }
             
             // merge user options with defaults
@@ -166,13 +169,13 @@
                 // create clock container
                 $("<div />", { class: "jcgmt-clockHolder" }).appendTo("#" + id);
                 // create hour hand
-                $("<div />", { class: "jcgmt-rotatingWrapper" }).append($("<img />", { class: "jcgmt-hour", src: "images/jcgmt-" + options.skin + "-clock_hour.png" })).appendTo("#" + id + ' .jcgmt-clockHolder');
+                $("<div />", { class: "jcgmt-rotatingWrapper" }).append($("<img />", { class: "jcgmt-hour", src: options.imgpath + "images/jcgmt-" + options.skin + "-clock_hour.png" })).appendTo("#" + id + ' .jcgmt-clockHolder');
                 // create min hand
-                $("<div />", { class: "jcgmt-rotatingWrapper" }).append($("<img />", { class: "jcgmt-min", src: "images/jcgmt-" + options.skin + "-clock_min.png" })).appendTo("#" + id + ' .jcgmt-clockHolder');
+                $("<div />", { class: "jcgmt-rotatingWrapper" }).append($("<img />", { class: "jcgmt-min", src: options.imgpath + "images/jcgmt-" + options.skin + "-clock_min.png" })).appendTo("#" + id + ' .jcgmt-clockHolder');
                 // create sec hand
-                $("<div />", { class: "jcgmt-rotatingWrapper" }).append($("<img />", { class: "jcgmt-sec", src: "images/jcgmt-" + options.skin + "-clock_sec.png" })).appendTo("#" + id + ' .jcgmt-clockHolder');
+                $("<div />", { class: "jcgmt-rotatingWrapper" }).append($("<img />", { class: "jcgmt-sec", src: options.imgpath + "images/jcgmt-" + options.skin + "-clock_sec.png" })).appendTo("#" + id + ' .jcgmt-clockHolder');
                 // create clock face
-                $("<img />", { class: "jcgmt-clock", src: 'images/jcgmt-' + options.skin + '-clock_face.png' }).appendTo("#" + id + ' .jcgmt-clockHolder');
+                $("<img />", { class: "jcgmt-clock", src: options.imgpath + 'images/jcgmt-' + options.skin + '-clock_face.png' }).appendTo("#" + id + ' .jcgmt-clockHolder');
 
                 // create digital clock container
                 $("<div />", { class: "jcgmt-digital" }).appendTo("#" + id);
