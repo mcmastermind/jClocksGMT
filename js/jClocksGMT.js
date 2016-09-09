@@ -165,27 +165,27 @@
                 $(this).addClass('jcgmt-container');
 
                 // create label
-                $("<div />", { text: options.title, class: "jcgmt-lbl" }).appendTo("#" + id);
+                $("<div />", { text: options.title, "class": "jcgmt-lbl" }).appendTo("#" + id);
 
                 if( options.analog )
                 {
                     // create clock container
-                    $("<div />", { class: "jcgmt-clockHolder" }).appendTo("#" + id);
+                    $("<div />", { "class": "jcgmt-clockHolder" }).appendTo("#" + id);
                     // create hour hand
-                    $("<div />", { class: "jcgmt-rotatingWrapper" }).append($("<img />", { class: "jcgmt-hour", src: options.imgpath + "images/jcgmt-" + options.skin + "-clock_hour.png" })).appendTo("#" + id + ' .jcgmt-clockHolder');
+                    $("<div />", { "class": "jcgmt-rotatingWrapper" }).append($("<img />", { "class": "jcgmt-hour", src: options.imgpath + "images/jcgmt-" + options.skin + "-clock_hour.png" })).appendTo("#" + id + ' .jcgmt-clockHolder');
                     // create min hand
-                    $("<div />", { class: "jcgmt-rotatingWrapper" }).append($("<img />", { class: "jcgmt-min", src: options.imgpath + "images/jcgmt-" + options.skin + "-clock_min.png" })).appendTo("#" + id + ' .jcgmt-clockHolder');
+                    $("<div />", { "class": "jcgmt-rotatingWrapper" }).append($("<img />", { "class": "jcgmt-min", src: options.imgpath + "images/jcgmt-" + options.skin + "-clock_min.png" })).appendTo("#" + id + ' .jcgmt-clockHolder');
                     // create sec hand
-                    $("<div />", { class: "jcgmt-rotatingWrapper" }).append($("<img />", { class: "jcgmt-sec", src: options.imgpath + "images/jcgmt-" + options.skin + "-clock_sec.png" })).appendTo("#" + id + ' .jcgmt-clockHolder');
+                    $("<div />", { "class": "jcgmt-rotatingWrapper" }).append($("<img />", { "class": "jcgmt-sec", src: options.imgpath + "images/jcgmt-" + options.skin + "-clock_sec.png" })).appendTo("#" + id + ' .jcgmt-clockHolder');
                     // create clock face
-                    $("<img />", { class: "jcgmt-clock", src: options.imgpath + 'images/jcgmt-' + options.skin + '-clock_face.png' }).appendTo("#" + id + ' .jcgmt-clockHolder');
+                    $("<img />", { "class": "jcgmt-clock", src: options.imgpath + 'images/jcgmt-' + options.skin + '-clock_face.png' }).appendTo("#" + id + ' .jcgmt-clockHolder');
                 }
 
                 // create digital clock container
-                $("<div />", { class: "jcgmt-digital" }).appendTo("#" + id);
+                $("<div />", { "class": "jcgmt-digital" }).appendTo("#" + id);
 
                 //create date container
-                $("<div />", { class: "jcgmt-date" }).appendTo("#" + id);
+                $("<div />", { "class": "jcgmt-date" }).appendTo("#" + id);
                 
                 // initial hand rotation
                 $('#' + id + ' .jcgmt-sec').rotate( options.angleSec );
