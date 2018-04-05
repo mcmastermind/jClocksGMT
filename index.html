@@ -15,31 +15,31 @@
     </head>
     <body>
 
-        <div id="clock_hou"></div>
-        <div id="clock_india"></div>
+        <div id="clock_la"></div>
+        <div id="clock_ny"></div>
         <div id="clock_korea"></div>
         <div id="clock_uk"></div>
         <div id="clock_tokyo"></div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
+        <script src="js/moment.js"></script>
+        <script src="js/moment-timezone.js"></script>
         <script src="js/jClocksGMT.js"></script>
         <script src="js/jquery.rotate.js"></script>
 
         <script>
             $(document).ready(function(){
 
-                $('#clock_hou').jClocksGMT(
+                $('#clock_la').jClocksGMT(
                 {
-                    title: 'Houston, TX, USA', 
-                    offset: '-6'
+                    title: 'Los Angeleas, CA, USA', 
+                    location: 'America/Los_Angeles'
                 });
 
-                $('#clock_india').jClocksGMT(
+                $('#clock_ny').jClocksGMT(
                 {
-                    title: 'New Delhi, India', 
-                    offset: '+5.5', 
-                    dst: false, 
+                    title: 'New York, NY, USA', 
+                    location: 'America/New_York',
                     skin: 2, 
                     timeformat: 'HH:mm'
                 });
@@ -47,7 +47,7 @@
                 $('#clock_korea').jClocksGMT(
                 {
                     title: 'Seoul, S. Korea', 
-                    offset: '+8', 
+                    location: 'Asia/Seoul',
                     skin: 3, 
                     date: true
                 });
@@ -55,6 +55,7 @@
                 $('#clock_uk').jClocksGMT(
                 {   
                     date: true, 
+                    location: 'Europe/London',
                     dateformat: 'YYYY/MM/DD', 
                     skin: 4
                 });
@@ -62,7 +63,7 @@
                 $('#clock_tokyo').jClocksGMT(
                 {
                     title: 'Tokyo, Japan',
-                    offset: '+9',
+                    location: 'Asia/Tokyo',
                     skin: 5
                 });
 
